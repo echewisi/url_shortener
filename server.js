@@ -12,8 +12,9 @@ app.listen(process.env.PORT||5000);
 
 app.set("view engine", "ejs");
 
-app.get("/", (req, res)=>{
-    res.render("index")
+app.get("/", async (req, res)=>{
+    const shorturls= await ShortUrl.find()
+    res.render("index", {shorturls: shorturls})
 })
 
 app.post("/shorturls", async (req, res)=>{

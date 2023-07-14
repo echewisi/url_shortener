@@ -27,12 +27,20 @@
                 </tr>
             </thead>
             <tbody>
-                <td>
-                    <a href="https://josephechewisi.com">"https://josephechewisi.com</a>
-                </td>
-                <td>
-                    <a href="/12345">12345</a>
-                </td>
+                <% shorturls.forEach(shorturls=>{ %>
+                    <td>
+                        <a href="<%= shorturls.full %>"><%= shorturls.full%></a>
+                    </td>
+                    <td>
+                        <a href="<%= shorturls.short %>"><%= shorturl.short %></a>
+                    </td>
+                    <%
+                    <td>
+                        <% shorturls.clicks %>
+                    </td>
+
+                }) %>
+
             </tbody>
         </table>
     </div>
